@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* AMEYA Brand Colors - Japanese Zen meets Bajaj Capital heritage */
+    --background: 30 15% 98%;
+    --foreground: 220 25% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    /* Primary - AMEYA Deep Red (refined Bajaj red with zen warmth) */
+    --primary: 350 75% 38%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 350 75% 32%;
+
+    /* Secondary - AMEYA Gold (warm, muted gold for calm elegance) */
+    --secondary: 40 55% 55%;
+    --secondary-foreground: 220 25% 12%;
+
+    /* Accent - Deep Navy/Indigo (Japanese inspired depth) */
+    --accent: 220 45% 18%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Zen - Calm sage green for health/wellness elements */
+    --zen: 155 25% 55%;
+    --zen-foreground: 220 25% 12%;
+
+    /* Purpose - Soft purple for ikigai/meaning elements */
+    --purpose: 280 30% 60%;
+    --purpose-foreground: 0 0% 100%;
+
+    --muted: 30 10% 95%;
+    --muted-foreground: 220 15% 45%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 350 75% 38%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar - Deep indigo with zen aesthetic */
+    --sidebar-background: 220 45% 10%;
+    --sidebar-foreground: 30 15% 92%;
+    --sidebar-primary: 350 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 40% 16%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 220 40% 18%;
+    --sidebar-ring: 350 70% 50%;
+    --sidebar-muted: 220 20% 40%;
+
+    /* Custom tokens */
+    --success: 155 50% 42%;
+    --success-foreground: 0 0% 100%;
+    --warning: 40 85% 55%;
+    --warning-foreground: 220 25% 12%;
+
+    /* AMEYA Gradients - Calm, flowing, Japanese-inspired */
+    --gradient-primary: linear-gradient(135deg, hsl(350, 75%, 38%) 0%, hsl(350, 65%, 28%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(40, 55%, 55%) 0%, hsl(35, 50%, 48%) 100%);
+    --gradient-zen: linear-gradient(135deg, hsl(155, 25%, 55%) 0%, hsl(160, 30%, 45%) 100%);
+    --gradient-purpose: linear-gradient(135deg, hsl(280, 30%, 60%) 0%, hsl(270, 35%, 50%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220, 45%, 10%) 0%, hsl(220, 40%, 14%) 100%);
+    --gradient-calm: linear-gradient(180deg, hsl(30, 15%, 98%) 0%, hsl(30, 12%, 95%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(30, 10%, 98%) 100%);
+
+    /* Shadows - Softer, more zen-like */
+    --shadow-sm: 0 1px 3px 0 hsl(220 25% 0% / 0.04);
+    --shadow-md: 0 4px 8px -1px hsl(220 25% 0% / 0.06), 0 2px 4px -2px hsl(220 25% 0% / 0.04);
+    --shadow-lg: 0 12px 20px -4px hsl(220 25% 0% / 0.08), 0 4px 8px -4px hsl(220 25% 0% / 0.04);
+    --shadow-xl: 0 24px 32px -8px hsl(220 25% 0% / 0.08), 0 8px 12px -6px hsl(220 25% 0% / 0.04);
+    --shadow-card: 0 2px 16px -2px hsl(220 25% 0% / 0.05);
+    --shadow-glow: 0 0 24px hsl(350, 75%, 38%, 0.12);
+    --shadow-zen: 0 8px 32px -8px hsl(155, 25%, 30%, 0.15);
+  }
+
+  .dark {
+    --background: 220 40% 6%;
+    --foreground: 30 15% 95%;
+
+    --card: 220 40% 10%;
+    --card-foreground: 30 15% 95%;
+
+    --popover: 220 40% 10%;
+    --popover-foreground: 30 15% 95%;
+
+    --primary: 350 70% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 50% 50%;
+    --secondary-foreground: 220 25% 12%;
+
+    --zen: 155 30% 50%;
+    --zen-foreground: 220 25% 12%;
+
+    --purpose: 280 35% 55%;
+    --purpose-foreground: 0 0% 100%;
+
+    --muted: 220 35% 14%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 220 40% 18%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 35% 18%;
+    --input: 220 35% 18%;
+    --ring: 350 70% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-semibold tracking-tight;
+  }
+
+  /* Japanese text styling */
+  .font-jp {
+    font-family: 'Noto Sans JP', 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-card/80 backdrop-blur-md border border-border/50;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+
+  .gradient-gold-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .gradient-zen-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-zen);
+  }
+
+  .gradient-purpose-text {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-purpose);
+  }
+
+  /* AMEYA Accent bars - refined, zen-like */
+  .ameya-accent-bar {
+    @apply h-0.5 w-full;
+    background-image: var(--gradient-primary);
+  }
+
+  .ameya-gold-bar {
+    @apply h-0.5 w-full;
+    background-image: var(--gradient-gold);
+  }
+
+  /* Japanese-inspired decorative elements */
+  .zen-circle {
+    @apply rounded-full;
+    background: radial-gradient(circle, hsl(var(--zen) / 0.15) 0%, transparent 70%);
+  }
+
+  .omotenashi-card {
+    @apply bg-card border border-border/60 rounded-lg shadow-card transition-all duration-500 ease-out;
+  }
+
+  .omotenashi-card:hover {
+    @apply shadow-lg border-border;
+  }
+
+  /* Calm button states - unhurried transitions */
+  .btn-calm {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .btn-calm:hover {
+    @apply transform scale-[1.02];
+  }
+
+  /* Life pillar indicators */
+  .pillar-wealth {
+    @apply border-l-4;
+    border-color: hsl(var(--primary));
+  }
+
+  .pillar-health {
+    @apply border-l-4;
+    border-color: hsl(var(--zen));
+  }
+
+  .pillar-purpose {
+    @apply border-l-4;
+    border-color: hsl(var(--purpose));
+  }
+}
+
+@layer utilities {
+  /* Zen-inspired animations - calmer, more deliberate */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Calm breathing animation for zen elements */
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 0.6;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Gentle pulse for CTAs - less aggressive than before */
+  @keyframes pulse-gentle {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--secondary) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--secondary) / 0);
+    }
+  }
+
+  /* Soft shimmer - more subtle */
+  @keyframes shimmer-soft {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-pulse-gentle {
+    animation: pulse-gentle 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-shimmer-soft {
+    background: linear-gradient(90deg, transparent, hsl(var(--secondary) / 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer-soft 3s infinite;
+  }
+
+  /* Stagger animations with longer delays for unhurried feel */
+  .stagger-1 { animation-delay: 0.15s; }
+  .stagger-2 { animation-delay: 0.3s; }
+  .stagger-3 { animation-delay: 0.45s; }
+  .stagger-4 { animation-delay: 0.6s; }
+  .stagger-5 { animation-delay: 0.75s; }
+
+  /* Wabi-sabi inspired texture overlay */
+  .texture-washi {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
